@@ -7,7 +7,7 @@ double x;
 double y;
 
 double F(double x, double y) { //math function
-    double result = sqrt((sqrt(cos(x) + sin(y)) + exp(x + y)) / sqrt(x + y + log(x) * log(x)));
+    double result = sqrt(log(cos(x + y) * cos(x + y)/sin((x + y) * (x + y))) * log(cos(x + y) * cos(x + y)/sin((x + y) * (x + y))) + exp(x * x * y));
 
     return result;
 }
