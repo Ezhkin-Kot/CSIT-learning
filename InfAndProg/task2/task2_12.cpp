@@ -58,15 +58,16 @@ int main() {
         cout << "неправильный год" << endl;
         return -2;
     }
-    if (DaysLeft < -2 || DaysLeft > 31) {
-        cout << "неизвестная ошибка" << endl;
-        return 0;
-    }
+
 
     string strMonth = MonthName(month); // transform integer type of month into a word
     if (strMonth == "?") { // exception catching
         cout << "неправильный месяц" << endl;
         return -3;
+    }
+    if (DaysLeft < -2 || DaysLeft > 31) {
+        cout << "неизвестная ошибка" << endl;
+        return 0;
     }
 
     // output

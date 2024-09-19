@@ -4,8 +4,8 @@ using namespace std;
 
 string converter(string stringX) {
     //arrays initialization
-    int Ydigits[4] {};
-    int Xdigits[4] {};
+    int Ydigits[4] = {};
+    int Xdigits[4] = {};
 
     //splitting x number into digits
     for (int i = 0; i < 4; i++) {

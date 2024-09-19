@@ -6,7 +6,7 @@ const int FIRSTNUM = 31;
 const int SECONDNUM = 48;
 
 string converter(string stringX) {
-    int Ydigits[4] {}; //array initialization
+    int Ydigits[4] = {}; //array initialization
     int firstX = stringX[0] - '0'; //conversion first char to integer
     int secondX = stringX[1] - '0'; //conversion second char to integer
 
