@@ -1,0 +1,1 @@
+// Getting array with coeffs of polynomials in n degree

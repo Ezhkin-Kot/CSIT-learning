@@ -59,20 +59,23 @@ struct Index {
 
 void replaceRows(int **array, int *size) {
     int temp = 0; // Intermediate value of element
-    Index minIndex = {0, 0};
     Index maxIndex = {0, 0};
+    Index minIndex = {1, *size - 1};
     int min = array[0][0];
     int max = array[0][0];
+    
     // Finding max element in shaded area or on the border and min in unshaded area
     for (int i = 0; i < *size; i++) {
         for (int j = 0; j < *size; j++) {
             if (array[i][j] > max && j <= *size - i - 1) {
                 max = array[i][j];
-                maxIndex = {i, j};
+                maxIndex.row = i;
+                maxIndex.col = j;
             }
             if (array[i][j] < min && j > *size - i - 1) {
                 min = array[i][j];
-                minIndex = {i, j};
+                minIndex.row = i;
+                minIndex.col = j;
             }
         }
     }
