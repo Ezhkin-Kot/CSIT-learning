@@ -54,7 +54,7 @@ int** SetArray(int *size) {
 void replaceRows(int **array, int *size) {
     int temp = 0; // Intermediate value of element
 
-    // Replacing columns
+    // Replacing rows
     for (int i = 0; i < (*size)/2; i++) {
         for (int j = 0; j < *size; j++) {
             temp = array[i][j];
