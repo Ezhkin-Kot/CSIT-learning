@@ -1,7 +1,11 @@
 #include "ArraySetter.h"
-#include <iostream>
 
-int* SetArray::oneDim(int *size) {
+SetArray::SetArray()
+{
+}
+
+int *SetArray::oneDim(int *size)
+{
     if (!*size) {
             std::cout << "Enter size of array: ";
         std::cin >> *size;

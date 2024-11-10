@@ -1,10 +1,52 @@
 #include <iostream>
 #include <cstdlib> // for realloc
-#include "/Users/ezhkinkot/Projects/CSIT/CSIT-learning/InfAndProg/myOwnLibs/ArraySetter.h"
+
+int* SetArray(int *size) {
+    std::cout << "Enter size of array: ";
+    std::cin >> *size;
+    // Checking correctness of input
+    if (!std::cin or *size < 1) {
+        std::cerr << "Invalid size" << std::endl;
+        return nullptr;
+    }
+
+    // Memory allocation
+    int *array = new int [*size];
+
+    // Choosing random or manual array setting
+    char choise;
+    std::cout << "Random or manual array setting? Type \"R\" to random or \"M\" to manual: ";
+    std::cin >> choise;
+    switch (choise)
+    {
+        case 'R': {
+            srand(time(NULL)); // Initialize random generator
+            // Randomise elements of array
+            for (int i = 0; i < *size; i++) {
+                array[i] = rand() % 100;
+                std::cout << array[i] << " ";
+            }
+            std::cout << std::endl;
+            break;
+        }
+        case 'M': {
+            std::cout << "Enter array elements separated by space: ";
+            for (int i = 0; i < *size; i++) {
+                std::cin >> array[i]; // Manual setting elements of array
+            }
+            break;
+        }
+        default: {
+            break;
+        }
+    }
+
+    return array;
+}
 
 int* InsertElems(int* array, int* size) {
     int insertAfterElem, elemToInsert;
-    std::cout << "Enter element before witch to insert: ";
+    std::cout << "Enter element after witch to insert: ";
     std::cin >> insertAfterElem;
     std::cout << "Enter element to insert: ";
     std::cin >> elemToInsert;
@@ -57,9 +99,8 @@ void printArray(int *array, int *size) {
 }
 
 int main() {
-    SetArray setArray;
     int size = 0;
-    int *array = setArray.oneDim(&size);
+    int *array = SetArray(&size);
 
     array = InsertElems(array, &size);
     printArray(array, &size);

@@ -1,10 +1,13 @@
 #pragma once
+#include <iostream>
 
 class SetArray {
     public:
-        int* oneDim(int* size);
+        SetArray();
 
-        int** twoDim(int* size);
+        int* oneDim(int *size);
 
-        int** twoDim(int* rows, int* cols);
+        int** twoDim(int *size);
+
+        int** twoDim(int *rows, int *cols);
 };
