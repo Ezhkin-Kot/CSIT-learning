@@ -53,21 +53,21 @@ int** SetArray(int *size) {
 }
 
 void insertRows(int**& array, int* rows, int* cols) {
-    std::string inputRow;
-    int target;
+    std::string inputCol;
+    int targetNum;
 
-    std::cout << "Enter row to insert: ";
+    std::cout << "Enter column to insert: ";
     std::cin.ignore();
-    std::getline(std::cin, inputRow);
+    std::getline(std::cin, inputCol);
 
     std::cout << "Enter number after to insert: ";
-    std::cin >> target;
+    std::cin >> targetNum;
 
-    // Finding target number in rows
-    for (int i = 0; i < *rows; ++i) {
-        bool found = false;
-        for (int j = 0; j < *cols; ++j) {
-            if (array[i][j] == target) {
+    // Finding target number in columns
+    for (int col = 0; col < *cols; ++col) {
+        int found = false;
+        for (int row = 0; row < *rows; ++row) {
+            if (array[row][col] == targetNum) {
                 found = true;
                 break;
             }
@@ -75,26 +75,29 @@ void insertRows(int**& array, int* rows, int* cols) {
 
         if (found) {
             // Resize array
-            (*rows)++;
-            array = (int**)realloc(array, *rows * sizeof(int*));
+            (*cols)++;
+            for (int row = 0; row < *rows; ++row) {
+                array[row] = (int*)realloc(array[row], *cols * sizeof(int));
+            }
             if (!array) {
                 std::cerr << "Memory allocation error" << std::endl;
                 exit(EXIT_FAILURE);
             }
 
-            // Shift rows
-            for (int k = *rows - 1; k > i + 1; --k) {
-                array[k] = array[k - 1];
+            // Shift columns
+            for (int row = 0; row < *rows; ++row) {
+                for (int tempCol = *cols - 1; tempCol > col; --tempCol) {
+                    array[row][tempCol] = array[row][tempCol - 1];
+                }
             }
 
-            // Insert new row
-            std::istringstream stream(inputRow);
-            array[i + 1] = new int[*cols];
-            for (int j = 0; j < *cols; ++j) {
-                stream >> array[i + 1][j];
+            // Insert new column
+            std::istringstream stream(inputCol);
+            for (int row = 0; row < *rows; ++row) {
+                stream >> array[row][col + 1];
             }
 
-            i++; // Skip inserted row
+            col++; // Skip inserted row
         }
     }
 }

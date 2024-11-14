@@ -53,48 +53,31 @@ int** SetArray(int *size) {
 }
 
 void insertRows(int**& array, int* rows, int* cols) {
-    std::string inputRow;
-    int target;
+    int targetNum;
+    std::cout << "Enter number to delete: ";
+    std::cin >> targetNum;
 
-    std::cout << "Enter row to insert: ";
-    std::cin.ignore();
-    std::getline(std::cin, inputRow);
-
-    std::cout << "Enter number after to insert: ";
-    std::cin >> target;
-
+    const int oldRows = *rows;
     // Finding target number in rows
-    for (int i = 0; i < *rows; ++i) {
+    for (int row = 0; row < *rows; ) {
         bool found = false;
-        for (int j = 0; j < *cols; ++j) {
-            if (array[i][j] == target) {
+        for (int col = 0; col < *cols; ++col) {
+            if (array[row][col] == targetNum) {
                 found = true;
                 break;
             }
         }
 
         if (found) {
-            // Resize array
-            (*rows)++;
-            array = (int**)realloc(array, *rows * sizeof(int*));
-            if (!array) {
-                std::cerr << "Memory allocation error" << std::endl;
-                exit(EXIT_FAILURE);
-            }
+            (*rows)--; // "Resize" array
 
             // Shift rows
-            for (int k = *rows - 1; k > i + 1; --k) {
-                array[k] = array[k - 1];
+            for (int tempRow = row; tempRow < *rows; ++tempRow) {
+                array[tempRow] = array[tempRow + 1];
             }
-
-            // Insert new row
-            std::istringstream stream(inputRow);
-            array[i + 1] = new int[*cols];
-            for (int j = 0; j < *cols; ++j) {
-                stream >> array[i + 1][j];
-            }
-
-            i++; // Skip inserted row
+        }
+        else {
+            row++;
         }
     }
 }
