@@ -22,7 +22,7 @@ T **SetArray(int *size)
 
     // Choosing random or manual array setting
     char choice;
-    std::cout << R"(Random or manual array setting? Type "R" to random or "M" to manual: )";
+    std::cout << "Random or manual array setting? Type \"R\" to random or \"M\" to manual: ";
     std::cin >> choice;
     switch (choice)
     {
@@ -31,7 +31,7 @@ T **SetArray(int *size)
             srand(time(NULL)); // Initialize random generator
             char typeChoice;
             std::cout <<
-                    R"(What type of elements you want? Type "I" to integer, "F" to floating point number or "S" to symbols: )";
+                    "What type of elements you want? Type \"I\" to integer, \"F\" to floating point number or \"S\" to symbols: ";
             std::cin >> typeChoice;
             switch (typeChoice)
             {
