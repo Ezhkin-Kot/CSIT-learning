@@ -8,6 +8,7 @@ std::string FindLongest(std::string s)
     std::string longestString, tempString;
     for (int i = 0; i < s.length(); i++)
     {
+        // Finding words length
         if (!(ispunct(s[i]) || isspace(s[i])))
         {
             tempString += s[i];
@@ -15,12 +16,14 @@ std::string FindLongest(std::string s)
         }
         else
         {
+            // Finding the biggest length
             if (tempLong > longest)
             {
                 longest = tempLong;
                 longestString = tempString;
             }
 
+            // Variables reset
             tempLong = 0;
             tempString.clear();
         }
@@ -40,3 +43,5 @@ int main()
     std::cout << "The longest word: " << longestString << std::endl;
     return 0;
 }
+
+// Это пример ввода. Самое длинное слово, которое будет выведено, расположено здесь: йцукенгшщзхъфыв, а все остальные меньше него.

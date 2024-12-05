@@ -7,11 +7,11 @@ std::string RemoveDigits(std::string* s)
     {
         if (isdigit((*s)[i]))
         {
-            (*s).erase(i, 1);
+            (*s).erase(i, 1); // Erase all digits
         }
         else
         {
-            i++;
+            i++; // Step
         }
     }
 
@@ -29,3 +29,5 @@ int main()
     std::cout << "String without digits: " << input << std::endl;
     return 0;
 }
+
+// Это при12413мер ст1234роки, со13дер5жащий бук0вы и 1234567890цифры. 

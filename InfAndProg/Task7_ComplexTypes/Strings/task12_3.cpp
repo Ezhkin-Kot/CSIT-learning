@@ -7,19 +7,30 @@ void Formatter(std::string& s)
     {
         if (isspace(s[i]) && (ispunct(s[i+1]) && s[i+1] != '('))
         {
-            s.replace(i, 2, s.substr(i+1, 1) + ' ');
+            s.replace(i, 2, s.substr(i+1, 1) + ' '); // Remove extra spaces with puncts
         }
         if (isspace(s[i]) && s[i+1] == ')')
         {
-            s.replace(i, 2, s.substr(i, 1) + ' ');
+            s.replace(i, 2, s.substr(i, 1) + ' '); // Remove extra spaces with open brackets
         }
         if (s[i] == '(' && isspace(s[i+1]))
         {
-            s.replace(i, 2, ' ' + s.substr(i, 1));
+            s.replace(i, 2, ' ' + s.substr(i, 1)); // Remove extra spaces with close brackets
+        }
+    }
+    for (int i = 0; i < s.size(); i++) {
+        if (!isspace(s[i]) && s[i] != '(' && s[i+1] == '(') {
+            s.insert(i + 1, " "); // Add spaces before open brackets
+            i++;
+        }
+        if (s[i] == ')' && !isspace(s[i+1]) && !ispunct(s[i+1]) && s[i+1] != ')') {
+            s.insert(i + 1, " "); // Add spaces after close brackets
+            i++;
         }
     }
     for (int i = 0; i < s.length(); i++)
     {
+        // Remove all extra spaces
         if (isspace(s[i]) && isspace(s[i+1]))
         {
             s.erase(i, 1);
@@ -31,13 +42,13 @@ void Formatter(std::string& s)
 int main()
 {
     std::string input;
-    std::cout << "Enter a string: ";
+    std::cout << "Enter text: ";
     std::getline(std::cin, input);
 
     Formatter(input);
 
-    std::cout << "The longest word: " << input << std::endl;
+    std::cout << "Correct text: " << input << std::endl;
     return 0;
 }
 
-// Пример   текста ,  где ( есть   ошибки ) и ,лишние   пробелы.
+// Это(пример)текста ,  где ( есть   ошибки ), и ,лишние   пробелы .
