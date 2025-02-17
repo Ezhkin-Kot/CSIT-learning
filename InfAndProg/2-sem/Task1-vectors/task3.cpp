@@ -36,14 +36,13 @@ double calculateVariance(std::list<double> list)
 {
     double mean = std::accumulate(list.begin(), list.end(), 0.0) / list.size();
 
-    // Calculating sum
-    double sum = 0.0;
-    for (double x : list) {
-        sum += (x - mean) * (x - mean);
-    }
+    // Calculating variance
+    double variance = std::accumulate(list.begin(), list.end(), 0.0, [mean](double sum, double x)
+    {
+        return sum + (x - mean) * (x - mean);
+    }) / (list.size() - 1);
 
-    // Calculating and returning variance
-    return sum / (list.size() - 1);
+    return variance;
 }
 
 int main()

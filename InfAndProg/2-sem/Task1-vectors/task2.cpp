@@ -50,13 +50,7 @@ void replaceWithMin(std::vector<int>& vec)
 {
     int min = *min_element(vec.begin(), vec.end());
 
-    for(int & iter : vec)
-    {
-        if (isMultipleOfThree(iter))
-        {
-            iter = min;
-        }
-    }
+    std::replace_if(vec.begin(), vec.end(), isMultipleOfThree, min);
 }
 
 std::vector<int> processVectors(std::vector<int>& vec1, std::vector<int>& vec2)

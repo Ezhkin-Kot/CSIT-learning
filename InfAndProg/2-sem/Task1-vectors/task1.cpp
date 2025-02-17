@@ -36,16 +36,7 @@ int countMinElems(std::vector<int> vec)
     // Finding min element
     int minElem = *min_element(vec.begin(), vec.end());
 
-    int count = 0;
-
-    for(const int & iter : vec)
-    {
-        // Calculating number of min elements
-        if (iter == minElem)
-        {
-            count++;
-        }
-    }
+    int count = std::count(vec.begin(), vec.end(), minElem);
 
     return count;
 }
