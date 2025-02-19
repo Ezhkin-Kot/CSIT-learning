@@ -1,0 +1,11 @@
+apple banana apple 123 orange banana apple grape orange banana grape 456
+watermelon peach pear peach watermelon pear cherry cherry cherry plum
+kiwi kiwi lemon lemon lemon passionfruit date passionfruit lemon mango mango mango
+blueberry guava raspberry strawberry strawberry plum strawberry passionfruit
+fig fig fig date date guava pomegranate mango pomegranate mango
+789 pineapple guava coconut fig date coconut coconut 101112 dragonfruit dragonfruit
+apricot apricot apricot apricot guava apricot plum plum plum plum lychee
+avocado fig avocado avocado avocado avocado dragonfruit avocado avocado lychee lychee
+passionfruit passionfruit strawberry passionfruit passionfruit passionfruit
+guava guava guava guava guava guava raspberry
+blueberry
