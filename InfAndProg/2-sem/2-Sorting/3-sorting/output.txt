@@ -1,0 +1,22 @@
+Surname             Position            Date of birth       Experience          Salary              
+__________________________________________________________________________________________
+Davis               Administrator       1980-06-25          20                  62000.00            
+Taylor              Administrator       1979-09-03          22                  63000.00            
+Moore               Tester              2001-12-15          1                   44000.00            
+Rodriguez           Tester              1993-10-05          4                   46000.00            
+Anderson            Marketer            1992-07-12          5                   50000.00            
+Miller              Marketer            1991-04-10          6                   48000.00            
+Martin              Designer            1990-10-20          6                   49500.00            
+Garcia              Designer            1988-12-30          7                   47000.00            
+Lopez               Designer            1987-11-14          9                   49000.00            
+Jackson             Programmer          2001-06-07          2                   56000.00            
+Hernandez           Programmer          1994-08-22          2                   57000.00            
+Jones               Programmer          1995-09-08          3                   55000.00            
+Gonzalez            Analyst             1982-02-27          14                  61000.00            
+Brown               Analyst             1982-03-15          15                  60000.00            
+Lee                 Analyst             1982-04-05          16                  60500.00            
+Johnson             Engineer            2001-07-23          5                   45000.00            
+Martinez            Engineer            1986-01-18          12                  53000.00            
+Thomas              Engineer            1981-03-29          18                  59000.00            
+Wilson              Manager             1989-05-09          8                   52000.00            
+Smith               Manager             1985-05-12          10                  50000.00            
