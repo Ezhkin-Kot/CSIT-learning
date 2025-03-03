@@ -1,6 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-while true; do
-    inotifywait -e close_write ./main.cpp
-    g++ ./main.cpp -o main
-done
+find . -name main.cpp | entr g++ main.cpp -o main
+

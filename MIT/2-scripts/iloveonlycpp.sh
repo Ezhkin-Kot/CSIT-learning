@@ -1,3 +1,3 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 find . -mindepth 1 ! -iname "*.cpp" -exec rm -rf {} +

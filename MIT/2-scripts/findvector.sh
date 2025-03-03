@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-grep -rl --include="*.cpp" "#include <vector>\|#include<vector>" .
+grep -rl --include="*.cpp" "#include <vector>" .
 

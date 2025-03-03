@@ -1,3 +1,3 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 vim "$(find "$HOME" -type f | fzf)"
