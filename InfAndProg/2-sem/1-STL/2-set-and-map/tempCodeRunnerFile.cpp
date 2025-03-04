@@ -1,1 +1,0 @@
-She loves to walk in the park. How wonderful it is to walk in the park! Do you love to walk in the park?

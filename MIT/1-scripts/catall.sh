@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 find . -type f -iname "*.txt" -exec cat {} +
 
