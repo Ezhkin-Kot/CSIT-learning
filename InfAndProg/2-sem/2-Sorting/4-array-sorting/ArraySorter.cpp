@@ -7,7 +7,7 @@ std::ofstream outputFile("output.txt");
 
 std::vector<std::vector<int>> readArray()
 {
-    if (!inputFile || !outputFile)
+    if (!inputFile)
     {
         std::cerr << "File not opened" << std::endl;
         return std::vector<std::vector<int>>();
@@ -67,6 +67,7 @@ void columnsQuickSort(std::vector<std::vector<int>> &array)
 {
     for (int j = 0; j < array.size(); j++)
     {
+        // Collect column elements
         std::vector<int> column(array.size());
         for (int i = 0; i < array.size(); i++)
         {
@@ -75,6 +76,7 @@ void columnsQuickSort(std::vector<std::vector<int>> &array)
 
         quickSort(column, 0, array.size() - 1);
 
+        // Writing sorted elements
         for (int i = 0; i < array.size(); i++)
         {
             array[i][j] = column[i];
@@ -105,6 +107,7 @@ void columnsShellSort(std::vector<std::vector<int>>& array)
 {
     for (int j = 0; j < array.size(); j++)
     {
+        // Collect column elements
         std::vector<int> column(array.size());
         for (int i = 0; i < array.size(); i++)
         {
@@ -113,6 +116,7 @@ void columnsShellSort(std::vector<std::vector<int>>& array)
 
         shellSort(column, j % 2);
 
+        // Writing sorted elements
         for (int i = 0; i < array.size(); i++)
         {
             array[i][j] = column[i];
@@ -123,10 +127,11 @@ void columnsShellSort(std::vector<std::vector<int>>& array)
 void selectionSort(std::vector<int>& diagonal)
 {
     int n = diagonal.size();
-    for (int i = 0; i < n - 1; ++i)
+    for (int i = 0; i < n - 1; i++)
     {
         int maxIdx = i;
-        for (int j = i + 1; j < n; ++j)
+        // Find max element
+        for (int j = i + 1; j < n; j++)
         {
             if (diagonal[j] > diagonal[maxIdx])
             {
@@ -187,8 +192,8 @@ void sortArraySelector(std::vector<std::vector<int>> &array)
     char choice;
     std::cout << "Sorting methods:" << std::endl;
     std::cout << "1. Quick sort columns" << std::endl;
-    std::cout << "2. Shell sort" << std::endl;
-    std::cout << "3. Selection sort" << std::endl;
+    std::cout << "2. Shell sort columns" << std::endl;
+    std::cout << "3. Selection sort diagonals" << std::endl;
     std::cout << "Choose sorting method (1, 2, 3): ";
     std::cin >> choice;
 
